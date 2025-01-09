@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
 
     <!-- Linking Bootstrap CSS below -->
     <link
@@ -43,10 +44,30 @@
       </div>
     </nav>
 
-    <h1>Welcome to Sarthak's Blog</h1>
-    <h2>
-      This website features detailed blogs about Upcoming Cars as well as Bikes
-    </h2>
+    <div class="content">
+      <div class="top">
+        <h2>Welcome to Sarthak's Blog</h2>
+        <h4>This website features detailed blogs about Upcoming Cars as well and Bikes</h4>
+      </div>
+
+      <form>
+        <h2>Contact Us Form</h2>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
 
     <!-- Linking Bootstrap JS below -->
     <script

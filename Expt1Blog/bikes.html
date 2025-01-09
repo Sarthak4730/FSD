@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Upcoming Bikes</title>
+    <link rel="stylesheet" href="style.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,5 +13,73 @@
       crossorigin="anonymous"
     />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">Sarthak's Blog</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./cars.html">Cars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bikes.html">Bikes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <marquee behavior="alternate">Upcoming Bikes</marquee>
+
+    <div class="container">
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://cdni.autocarindia.com/utils/ImageResizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Royal-Enfield-Classic-650-Twin-051120241412.jpg&w=350&h=251&q=92&c=1"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Royal Enfield Classic 650 Twin</h5>
+          <p class="card-text">Expected Price : ₹ 3.50 - 3.80 lakh</p>
+          <a href="./Bikes/first.html" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://cdni.autocarindia.com/utils/ImageResizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Hero-MotoCorp-Xpulse-210-071120241012.png&w=350&h=251&q=92&c=1"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Hero MotoCorp Xpulse 210</h5>
+          <p class="card-text">Expected price: ₹ 1.70 - 1.90 lakh</p>
+          <a href="./Bikes/second.html" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img
+          src="https://cdni.autocarindia.com/utils/ImageResizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Hero-MotoCorp-Karizma-XMR-250-071120241014.png&w=350&h=251&q=92&c=1"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Hero MotoCorp Karizma XMR 250</h5>
+          <p class="card-text">Expected price: ₹ 2.00 - 2.40 lakh</p>
+          <a href="./Bikes/third.html" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

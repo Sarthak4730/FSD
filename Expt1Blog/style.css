@@ -7,3 +7,19 @@
   display: flex;
   justify-content: space-between;
 }
+
+.content{
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.top{
+  text-align: center;
+}
+
+marquee{
+  font-size: 30px;
+}
