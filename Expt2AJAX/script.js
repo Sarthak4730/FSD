@@ -6,7 +6,12 @@ async function getInfo(url){
     let a = await fetch(url)
     let b = await a.json()
     console.log(b)
-    document.querySelector(".result").innerHTML = `<h2>Location = ${b.location.name}, ${b.location.region}, ${b.location.country}</h2> <br/> <h3> Temperature = ${b.current.temperature} &deg; Celsius`
+
+    let container = document.querySelector(".container")
+    let result = document.createElement("div")
+    result.setAttribute("class", "result")
+    container.append( result )
+    result.innerHTML = `<h3><span>Location</span> = ${b.location.name} ( ${b.location.region}, ${b.location.country} )</h3> <br/> <h2> <span>Temperature</span> = ${b.current.temperature} &deg;Celsius</h2>`
 
 }
 document.querySelector("button").addEventListener("click", ()=>{

@@ -51,22 +51,29 @@
       </div>
 
       <form>
-        <h2>Contact Us Form</h2>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <h1>Contact Us Form</h1>
+        <div class="field">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname">
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+        <div class="field">
+            <label for="age">Age</label>
+            <input type="text" id="age">
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <div class="field">
+            <label for="phonenumber">Phone Number</label>
+            <input type="tel" minlength="10" id="phonenumber">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="text" id="email">
+        </div>
+        <div class="field">
+            <label for="address">Address</label>
+            <textarea id="address"></textarea>
+        </div>
+        <button id="form-submit">Submit</button> 
+    </form>
     </div>
 
     <!-- Linking Bootstrap JS below -->

@@ -1,6 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+  background-color: green;
 }
 
 .container {
@@ -9,7 +14,7 @@
 }
 
 .content{
-  height: 75vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -22,4 +27,93 @@
 
 marquee{
   font-size: 30px;
+}
+
+form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.field{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center;
+}
+
+label{
+    font-weight: 500;
+}
+
+input, textarea{
+    border: 2px solid #32CBFF;
+    border-radius: 10px;
+    width: 20vw;
+    padding-left: 10px;
+    font-size: 15px;
+    height: 30px;
+    font-weight: 500;
+}
+textarea{
+    height: 10vh;
+    padding-top: 10px;
+}
+
+button{
+    background-color: #32CBFF;
+    height: 35px;
+    width: 80px;
+    border: none;
+    font-weight: 600;
+}
+button:hover{
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    border: 3px solid #32CBFF;
+}
+
+.result{
+    display: none;
+    width: 50vw;
+    margin-top: 15vh;
+    margin-left: 25vw;
+    height: 70vh;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+h3{
+    margin: 30px 0;
+}
+
+.data-div{
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+hr{
+    width: 45vw;
+    height: 3px;
+    color: #32CBFF;
+    background-color: #32CBFF;
+}
+
+b{
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #32CBFF;
+    text-underline-offset: 3px;
 }
