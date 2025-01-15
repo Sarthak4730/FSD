@@ -40,34 +40,47 @@ function backEvent(){
     document.querySelector("#address").value = "";
 }
 
-function displayResult(fullname, age, phonenumber, email, address){
+// function displayResult(fullname, age, phonenumber, email, address){
+//     let form = document.querySelector("form");
+//     form.style.display = "none";
+
+//     let result = document.querySelector(".result");
+//     result.style.display = "flex";
+//     result.style.flexDirection = "column";
+//     result.style.justifyContent = "center";
+//     result.style.alignItems = "center";
+//     result.style.textAlign = "center";
+
+//     result.innerHTML = `
+//     <h1> Congratulations !!! </h1>
+//     <h3> Your registration form has been submitted successfully </h3>
+//     <hr />
+//     <div class="data-div">
+//         <p> Hello <b>${fullname}</b> </p>
+//         <p> You are <b>${age}</b> years young </p>
+//         <p> You will pick up your phone, if we call the number <b>${phonenumber}</b> </p>
+//         <p> Google knows you as <b>${email}</b> </p>
+//         <p> On new years eve, you will be found at <b>${address} </p> 
+//     </div>
+//     `;
+
+//     let back = document.createElement("button");
+//     result.append(back);
+//     back.innerText = "Go Back";
+//     back.addEventListener("click", backEvent);
+// }
+function displayResult(){
     let form = document.querySelector("form");
     form.style.display = "none";
 
     let result = document.querySelector(".result");
     result.style.display = "flex";
-    result.style.flexDirection = "column";
-    result.style.justifyContent = "center";
-    result.style.alignItems = "center";
-    result.style.textAlign = "center";
+    // result.style.flexDirection = "column";
+    // result.style.justifyContent = "center";
+    // result.style.alignItems = "center";
+    // result.style.textAlign = "center";
 
-    result.innerHTML = `
-    <h1> Congratulations !!! </h1>
-    <h3> Your registration form has been submitted successfully </h3>
-    <hr />
-    <div class="data-div">
-        <p> Hello <b>${fullname}</b> </p>
-        <p> You are <b>${age}</b> years young </p>
-        <p> You will pick up your phone, if we call the number <b>${phonenumber}</b> </p>
-        <p> Google knows you as <b>${email}</b> </p>
-        <p> On new years eve, you will be found at <b>${address} </p> 
-    </div>
-    `;
-
-    let back = document.createElement("button");
-    result.append(back);
-    back.innerText = "Go Back";
-    back.addEventListener("click", backEvent);
+    result.innerHTML = "<i>Your form has been submitted successfully, we will contact you shortly.</i>";
 }
 
 document.querySelector("#form-submit").addEventListener("click", (e)=>{
@@ -75,16 +88,16 @@ document.querySelector("#form-submit").addEventListener("click", (e)=>{
     
     e.preventDefault();
     
-    let fullname = document.querySelector("#fullname").value;
     let age = document.querySelector("#age").value;
     let phonenumber = document.querySelector("#phonenumber").value;
     let email = document.querySelector("#email").value;
-    let address = document.querySelector("#address").value;
 
     validFields = checkAge(age, validFields);
     validFields = checkPhoneNumber(phonenumber, validFields);
     validFields = checkEmail(email, validFields);
 
     if( validFields == 3 )
-        displayResult(fullname, age, phonenumber, email, address);
+        // displayResult(fullname, age, phonenumber, email, address);
+        displayResult();
+        // alert("Your form has been submitted successfully, we will contact you shortly.");
 });
