@@ -70,3 +70,11 @@ span {
   display: flex;
   flex-direction: column;
 }
+
+.neatness{
+  height: 8vh;
+}
+
+h3{
+  font-size: 25px;
+}
