@@ -24,7 +24,6 @@ let humidityIcon =
 async function getInfo(url) {
   let a = await fetch(url);
   let b = await a.json();
-  console.log(b);
 
   let dayOrNightIcon, dayOrNightStatus;
   if(b.current.is_day == "yes"){
@@ -36,12 +35,18 @@ async function getInfo(url) {
   }
 
   result.innerHTML = `
-  <div class="neatness"> <h3> ${locationIcon} <span>Location</span> = ${b.location.name} ( ${b.location.region}, ${b.location.country} ) </h3> </div>
-  <div class="neatness"> <h3> ${tempIcon} <span>Temperature</span> : ${b.current.temperature} &deg;C </h3> </div>
-  <div class="neatness"> <h3> ${feelIcon} <span>Feels like</span> : ${b.current.feelslike} &deg;C </h3> </div>
-  <div class="neatness"> <h3> ${humidityIcon} <span>Humidity</span> : ${b.current.humidity}% </h3> </div>
-  <h3>${dayOrNightIcon} ${dayOrNightStatus}</h3>
+  <h3> ${locationIcon} <span>Location</span> = ${b.location.name} ( ${b.location.region}, ${b.location.country} ) </h3>
+  <h3> ${tempIcon} <span>Temperature</span> : ${b.current.temperature} &deg;C | <span>Feels like</span> : ${b.current.feelslike} &deg;C </h3>
+  <h3> ${humidityIcon} <span>Humidity</span> : ${b.current.humidity}% </h3>
+  <h3> ${dayOrNightIcon} ${dayOrNightStatus} | <span>Weather Description</span> : ${b.current.weather_descriptions[0]}</h3>
   `;
+
+  let weatherType = b.current.weather_descriptions[0];
+  let apiKey = "UiNWBHuR80w6lZEUxaHayQd5Z8641KAEV0qmIuFAE7c";
+  let unsplashReq = await fetch(`https://api.unsplash.com/photos/random?query=${weatherType}&client_id=${apiKey}`);
+  let unsplashRes = await unsplashReq.json();
+
+  document.querySelector("body").style.backgroundImage = `url( ${unsplashRes.urls.regular} )`;
 
   document.querySelector("input").value = "";
 }
@@ -50,15 +55,5 @@ document.querySelector("button").addEventListener("click", async () => {
   result.innerHTML = "";
   let city = document.querySelector("input").value;
   let url = `http://api.weatherstack.com/current?access_key=${myKey}&query=${city}`;
-  // getInfo(url);
-  // let a = await fetch('https://api.unsplash.com/search/photos');
-  let weatherType = "Rainy";
-  let apiKey = "UiNWBHuR80w6lZEUxaHayQd5Z8641KAEV0qmIuFAE7c";
-  let a = await fetch(`https://api.unsplash.com/photos/random?query=${weatherType}&client_id=${apiKey}`);
-  let b = await a.json();
-  console.log(b);
-
-  result.innerHTML = `
-  <img width="300px" height="150px" src="${b.urls.regular}" alt="${b.alt_description}" />
-  `;
+  getInfo(url);
 });

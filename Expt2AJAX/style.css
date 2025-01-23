@@ -7,16 +7,21 @@
 }
 
 body {
-  background-color: #004e91;
+  background-color: #b69cff;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
-  color: yellow;
+  background-color: #2bedd7;
+  color: black;
   margin-top: 10vh;
+  display: inline-block;
+  padding: 0 20px;
 }
 
 .container {
-  border: 1px solid black;
+  border: 3px solid #2bedd7;
   width: 50vw;
   height: 65vh;
   margin: 10vh auto;
@@ -77,4 +82,5 @@ span {
 
 h3{
   font-size: 25px;
+  line-height: 50px;
 }
