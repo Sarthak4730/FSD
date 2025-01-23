@@ -1,4 +1,4 @@
-let myKey = "ca550c8d8952d06318ebef43c8d508d9";
+let myKey = "63390dd49e606006c3f9f5d300b510cc";
 
 let container = document.querySelector(".container");
 let result = document.createElement("div");
@@ -46,9 +46,19 @@ async function getInfo(url) {
   document.querySelector("input").value = "";
 }
 
-document.querySelector("button").addEventListener("click", () => {
+document.querySelector("button").addEventListener("click", async () => {
   result.innerHTML = "";
   let city = document.querySelector("input").value;
   let url = `http://api.weatherstack.com/current?access_key=${myKey}&query=${city}`;
-  getInfo(url);
+  // getInfo(url);
+  // let a = await fetch('https://api.unsplash.com/search/photos');
+  let weatherType = "Rainy";
+  let apiKey = "UiNWBHuR80w6lZEUxaHayQd5Z8641KAEV0qmIuFAE7c";
+  let a = await fetch(`https://api.unsplash.com/photos/random?query=${weatherType}&client_id=${apiKey}`);
+  let b = await a.json();
+  console.log(b);
+
+  result.innerHTML = `
+  <img width="300px" height="150px" src="${b.urls.regular}" alt="${b.alt_description}" />
+  `;
 });
